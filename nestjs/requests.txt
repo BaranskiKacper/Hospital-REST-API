@@ -1,0 +1,135 @@
+*******************************************************************
+Appointments:
+
+GET
+http://localhost:3000/appointments
+
+http://localhost:3000/appointments/1
+
+POST
+http://localhost:3000/appointments
+{
+    "doctorId": 1,
+    "registrationId": 1,
+    "appointmentType": "visit1",
+    "appointmentDate": "2023-10-22T00:00:00.000Z",
+    "duration": 3,
+    "price": 100,
+    "diagnosis": "illness1"
+}
+
+PUT
+http://localhost:3000/appointments/3
+{
+    "doctorId": 1,
+    "registrationId": 1,
+    "appointmentType": "aaaaa",
+    "appointmentDate": "2023-11-20T10:00:00Z",
+    "duration": 70,
+    "price": 200.00,
+    "diagnosis": "Investigation"
+}
+
+PUT
+http://localhost:3000/appointments/2/diagnosis
+{
+    "diagnosis": "bad illness"
+}
+
+PATCH
+http://localhost:3000/appointments/2/date
+{
+    "appointmentDate": "2023-10-12T00:00:00.000Z"
+}
+
+DELETE
+http://localhost:3000/appointments/4
+
+
+*******************************************************************
+Doctors:
+
+GET
+http://localhost:3000/doctors
+
+http://localhost:3000/doctors/1
+
+POST
+http://localhost:3000/doctors
+{
+  "firstName": "Celine",
+  "lastName": "Cyrus",
+  "specialization": "cardiologist"
+}
+
+PUT
+http://localhost:3000/doctors/4
+{
+    "firstName": "Updated First Name",
+    "lastName": "Alright",
+    "specialization": "alchemist"
+}
+
+DELETE
+http://localhost:3000/doctors/4
+
+
+*******************************************************************
+Patients:
+
+GET
+http://localhost:3000/patients
+
+http://localhost:3000/patients/1
+
+POST
+http://localhost:3000/patients
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "PESEL": "1234567890",
+  "familyDoctorId": 1
+}
+
+PUT
+http://localhost:3000/patients/1
+{
+  "firstName": "UpdatedFirstName",
+  "lastName": "UpdatedLastName",
+  "familyDoctorId": 2
+}
+
+PATCH
+http://localhost:3000/patients/1/lastName
+{
+  "lastName": "Greg"
+}
+
+DELETE
+http://localhost:3000/patients/1
+
+
+*******************************************************************
+Registrations:
+
+GET
+http://localhost:3000/registrations
+
+http://localhost:3000/registrations/1
+
+POST
+http://localhost:3000/registrations
+{
+    "patientId": 1,
+    "registrationDate": "2023-10-19T08:00:00Z"
+}
+
+PUT
+http://localhost:3000/registrations/1
+{
+  "patientId": 1,
+  "registrationDate": "2023-10-19T15:00:00.000Z"
+}
+
+
+

@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16.0-alpine3.18
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql
+    ports:
+      - '9999:5432'
+
+  pgadmin:
+    image: dpage/pgadmin4:7.7
+    environment:
+      PGADMIN_DEFAULT_EMAIL: abd@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - '9001:80'
+
+  api:
+    build:
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: "postgresql://postgres:password@db:5432/postgres?schema=public"
+    ports:
+      - '9010:3000'
+
+volumes:
+  pgdata:
