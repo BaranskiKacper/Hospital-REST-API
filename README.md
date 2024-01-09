@@ -1,7 +1,7 @@
-# Hospital Web API
+# Hospital REST API
 
 ## Overview
-The Hospital Web API is a full-stack application designed to manage hospital operations. It consists of a frontend developed with Next.js and a backend powered by NestJS.
+The Hospital REST API is a full-stack application designed to manage hospital operations. It consists of a frontend developed with Next.js and a backend powered by NestJS. The application uses PostgreSQL as its database system and pgAdmin as a web-based administration tool for PostgreSQL.
 
 ## Project Structure
 - `frontend`: The frontend application built using Next.js. It provides the user interface for the system.
